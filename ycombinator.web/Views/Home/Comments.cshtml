@@ -1,0 +1,34 @@
+﻿@using ycombinator.data
+@using ycombinator.web.Models
+@model CommentViewModel
+
+    <div class="container col-md-offset-3">
+        @*<h3>Comments for <a href="@Model.Comments[0].Article.URL">@Model.Comments[0].Article.Title</a></h3>*@
+
+        <h3>Comments for <a href="@Model.article.URL">@Model.article.Title</a></h3>
+        <form method="post" action="/Home/Comments">
+            <textarea class="form-control"name="comment"rows="8" >@if (Model.Comment != null)
+            {
+                @Model.Comment
+            }
+            </textarea>
+
+
+            <input type="hidden"name="ArticleId"value="@Model.article.Id">
+            <button class="btn btn-primary" >Submit</button>
+        </form>
+
+
+        <div class="col-md-3">
+            <table class="table-borderless">
+                @foreach(Comment C in Model.Comments)
+                {
+                    <tr>
+                        <td><small>@C.User.FirstName @C.User.LastName | @C.Date</small><br />
+                        @C.Comment1
+                         </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>

@@ -1,0 +1,33 @@
+﻿@using ycombinator.data
+@using ycombinator.web.Models
+
+@model IndexViewModel
+
+<table class="table-borderless">
+    @*<tr>
+        <th>Title</th>
+        <th>Uploaded By</th>
+        <th>Likes</th>
+        @if (Model.UserId != 0)
+        {
+            <th>Vote</th>
+        }
+        
+    </tr>*@
+   @{int x=1;}
+    @foreach (Article A in Model.Articles)
+    {
+        <tr>
+            <td>@x. <a href="Home/Article?id=@A.Id">@A.Title</a> <small>( <a href="UploadedByUser/@A.UploadedBy">@A.User.FirstName @A.User.LastName ) </a></small><br />
+            <small>uploaded on @A.Date.ToShortDateString() </small> <small><a href="/Home/Comments?id=@A.Id">@A.Comments.Count Comments </a></small>
+            </td>
+            
+
+
+            @{ x++;}
+           
+        </tr>
+    }
+    
+</table>
+

@@ -1,0 +1,8 @@
+﻿@using ycombinator.data
+@using ycombinator.web.Models
+@model IndexViewModel
+    
+<div class="container col-md-offset-3">
+    <h2>Top Posts</h2>
+    @Html.Partial("_HackerNewsListView",@Model)
+</div> 

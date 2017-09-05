@@ -1,0 +1,26 @@
+﻿<div class="container" style="padding-top:60px;">
+    <div class="col-md-offset-3 col-md-6 well">
+        <form method="post" action="/Home/Register">
+            <input type="text" class="form-control" name="FirstName" placeholder="First Name" />
+            <br />
+            <input type="text" class="form-control" name="LastName" placeholder="Last Name" />
+            <br />
+            <input type="text" class="form-control" name="Email" placeholder="Email" />
+            <br />
+            <input type="password" class="form-control" id="password" name="Password" placeholder="Password" />
+            <br />
+            <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password" />
+            <br />
+            <label id="label"></label>
+            <button class="btn btn-primary" disabled>Register</button>
+        </form>
+    </div>
+</div>
+
+@section scripts
+
+{
+
+    <script src="~/Scripts/Register.js"></script>
+
+}
